@@ -15,5 +15,7 @@ export const skillsData = [
   'Github',
   'Webpack',
   "Node JS",
-  "MaterialUI"
+  "MaterialUI",
+  "Vercel",
+  "Firebase"
 ]
