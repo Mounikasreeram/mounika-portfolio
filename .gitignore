@@ -1,0 +1,22 @@
+
+# dependencies
+node_modules
+
+# next build
+.next
+
+# production
+out
+
+# misc
+.DS_Store
+*.log
+
+# env files
+.env
+.env.local
+.env.production
+
+# vercel
+.vercel
+
