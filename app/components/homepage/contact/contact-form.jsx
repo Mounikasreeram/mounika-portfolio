@@ -37,8 +37,8 @@ function ContactForm() {
     if (!process.env.NEXT_PUBLIC_APP_URL) {
       const subject = encodeURIComponent(`Portfolio message from ${userInput.name}`);
       const body = encodeURIComponent(`${userInput.message}\n\nFrom: ${userInput.name}\nEmail: ${userInput.email}`);
-      console.log(personalData.email,subject,"test125678")
-      window.location.href = `mailto:${personalData.email}?subject=${subject}&body=${body}`;
+      console.log(personalData.gmail,subject,"test125678")
+      window.location.href = `mailto:${personalData.gmail}?subject=${subject}&body=${body}`;
       return;
     }
 

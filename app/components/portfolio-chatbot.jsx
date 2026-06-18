@@ -18,7 +18,7 @@ function getReply(message) {
   const text = message.toLowerCase();
 
   if (text.includes("contact") || text.includes("email") || text.includes("phone")) {
-    return `You can contact Mounika at ${personalData.email} or ${personalData.phone}. She is based in ${personalData.address}.`;
+    return `You can contact Mounika at ${personalData.gmail} or ${personalData.phone}. She is based in ${personalData.address}.`;
   }
 
   if (text.includes("resume") || text.includes("cv")) {

@@ -23,12 +23,12 @@ function Footer() {
             </Link>
             <Link
               target="_blank"
-              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalData.email}`}
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalData.gmail}`}
               className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
             >
 
 
-              <span>Email</span>
+              <span>Gmail</span>
             </Link>
           </div>
         </div>

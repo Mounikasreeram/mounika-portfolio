@@ -12,9 +12,9 @@ import { BiLogoGmail } from "react-icons/bi";
 function HeroSection() {
   const socialLinks = [
     {
-      href: personalData.gmail,
+      href: `https://mail.google.com/mail/?view=cm&fs=1&to=${personalData.gmail}`,
       icon: <BiLogoGmail size={30} />,
-      label: "GitHub",
+      label: "Gmail",
     },
     {
       href: personalData.linkedIn,
@@ -81,21 +81,21 @@ function HeroSection() {
 
             <div className="flex items-center gap-5 w-fit rounded-2xl border border-pink-500/40 bg-[#0b0f2a]/80 px-6 py-4 shadow-[0_0_30px_rgba(236,72,153,0.15)] backdrop-blur-md">
               {socialLinks.map((link) => (
-                <Link
-                  key={link.label}
+                <a
                   href={link.href}
-                  target="_blank"
+                  target={ "_blank"}
+                  rel="noopener noreferrer"
                   aria-label={link.label}
                   className="
-          text-pink-500 
-          transition-all 
-          duration-300 
-          hover:scale-125 
-          hover:text-cyan-400
-        "
+                  text-pink-500
+                  transition-all
+                  duration-300
+                  hover:scale-125
+                  hover:text-cyan-400
+                "
                 >
                   {link.icon}
-                </Link>
+                </a>
               ))}
             </div>
           </div>
