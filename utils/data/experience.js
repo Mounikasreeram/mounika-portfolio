@@ -3,7 +3,7 @@ export const experiences = [
     id: 1,
     title: "Senior Engineer - Product & Platform Engineering",
     company: "Altimetrik",
-    duration: "July 2022 - Present",
+    duration: "July 2022 - Sept 2026",
   },
   {
     id: 2,

@@ -1,6 +1,30 @@
 export const projectsData = [
+{
+  id: 1,
+  name: "Custody Security Ledger (CSL)",
+  company: "Citi (Altimetrik)",
+  url: "", // optional
+  description:
+    "Developed enterprise-grade frontend functionality for Citi’s Custody Security Ledger platform, including transaction and position search workflows, reusable React/TypeScript components, AG Grid data management, filtering, grouping, pagination, field validation, secure OIDC-authenticated API integration, and real-time data rendering.",
+  tools: [
+    "React",
+    "TypeScript",
+    "Redux Toolkit",
+    "React Router",
+    "AG Grid",
+    "OIDC Authentication",
+    "REST APIs",
+    "Vitest",
+    "React Testing Library",
+    "Mock Service Worker (MSW)",
+  ],
+  role: "Senior Frontend Engineer",
+  code: "",
+  demo: "",
+},
+
     {
-      id: 1,
+      id: 2,
       name: "DEX WorkBench",
       company: "Altimetrik",
       url: "https://dex-workbench.altimetrik.com/talentCentral", // optional
@@ -23,7 +47,7 @@ export const projectsData = [
     },
   
     {
-      id: 2,
+      id: 3,
       name: "MORPH - Enterprise Design System",
       company: "Altimetrik",
       url: "https://morph.altimetrik.com/", // optional
@@ -47,7 +71,7 @@ export const projectsData = [
     },
   
     {
-      id: 3,
+      id: 4,
       name: "Pre-BGV Portal",
       company: "Altimetrik",
       url: "https://bgv-qa.altimetrik.com", // optional
@@ -67,7 +91,7 @@ export const projectsData = [
     },
   
     {
-      id: 4,
+      id: 5,
       name: "UXD Website & Competency Portal",
       company: "Altimetrik",
       url: "", // optional
@@ -86,7 +110,7 @@ export const projectsData = [
     },
   
     {
-      id: 5,
+      id: 6,
       name: "NGP Payment Gateway",
       company: "Altimetrik Client - Intuit",
       url: "", // optional
@@ -106,7 +130,7 @@ export const projectsData = [
     },
   
     {
-      id: 6,
+      id: 7,
       name: "ScheduleF",
       company: "Tata Consultancy Services (TCS)",
       url: "", // optional
@@ -125,7 +149,7 @@ export const projectsData = [
     },
   
     {
-      id: 7,
+      id: 8,
       name: "SAHATTY",
       company: "NEXGWEB Technologies",
       url: "", // optional

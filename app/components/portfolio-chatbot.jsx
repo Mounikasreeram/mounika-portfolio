@@ -10,7 +10,7 @@ import { IoClose, IoSend } from "react-icons/io5";
 const starters = [
   "What is Mounika's experience?",
   "Which skills does she use?",
-  "Tell me about DEX WorkBench",
+  "Tell me about Custody Security Ledger (CSL)",
   "How can I contact her?",
 ];
 
@@ -35,14 +35,14 @@ function getReply(message) {
   }
 
   if (text.includes("experience") || text.includes("work") || text.includes("altimetrik")) {
-    return "Mounika is a Senior Frontend Engineer at Altimetrik with 6+ years of experience building scalable enterprise web applications, leading frontend delivery, mentoring engineers, and designing reusable component systems.";
+    return "Mounika is a Senior Frontend Engineer at Altimetrik with 7+ years of experience building scalable enterprise web applications, leading frontend delivery, mentoring engineers, and designing reusable component systems.";
   }
 
   if (text.includes("linkedin")) {
     return `You can view her LinkedIn profile here: ${personalData.linkedIn}`;
   }
 
-  return "I can help with Mounika's experience, skills, projects, resume, and contact details. Try asking about her frontend work, DEX WorkBench, or design systems experience.";
+  return "I can help with Mounika's experience, skills, projects, resume, and contact details. Try asking about her frontend work, Custody Security Ledger (CSL), or design systems experience.";
 }
 
 export default function PortfolioChatbot() {

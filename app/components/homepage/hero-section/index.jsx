@@ -26,7 +26,7 @@ function HeroSection() {
   const coderData = {
     name: "Mounika Sreeram",
     role: "Senior Frontend Engineer",
-    experience: "6+ Years",
+    experience: "7+ Years",
     skills: [
       "React",
       "Redux Toolkit",

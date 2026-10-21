@@ -36,7 +36,7 @@ function ProjectCard({ project }) {
         </div>
 
         {/* Optional URL */}
-        {project.url && (
+        {/* {project.url && (
           <a
             href={project.url}
             target="_blank"
@@ -60,7 +60,7 @@ function ProjectCard({ project }) {
           >
             Visit
           </a>
-        )}
+        )} */}
       </div>
 
       {/* Content */}
