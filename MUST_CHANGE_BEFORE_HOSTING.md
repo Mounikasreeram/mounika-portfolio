@@ -35,11 +35,17 @@ These are the values you should confirm before publishing the portfolio.
   - `GMAIL_PASSKEY`
 
 
-## Chatbot
+## Chatbot & resume-driven content
 
-- `app/components/portfolio-chatbot.jsx`
-  - Current chatbot is a static portfolio assistant, so it works on GoDaddy static hosting.
-  - For a real AI chatbot using an LLM, add a backend API route and keep the API key only on the server.
+- The chatbot, hero stats, work-eligibility badges, About text, Experience timeline, Skills
+  categories, Education and Certifications are all read from `public/resume.pdf`.
+  **To update the site, just replace `public/resume.pdf` and redeploy.** No code changes needed.
+- No paid AI service or API key: answers come from a local search engine over the resume
+  (`utils/resume/chat-engine.js`), served by `app/api/chat/route.js`.
+- On static hosting (no API routes) the chatbot automatically runs the same engine in the browser.
+- Keep the resume layout similar (section headings in CAPS, bold role/project lines, date ranges like
+  `Jul 2022 – Sep 2026`) so the parser recognises each part.
+- Extra project details/tools shown in the chatbot come from `utils/data/projects-data.js`.
 
 ## GoDaddy Hosting
 

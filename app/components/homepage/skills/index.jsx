@@ -5,9 +5,9 @@ import { skillsImage } from "@/utils/skill-image";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
-function Skills() {
+function Skills({ categories = [] }) {
   return (
-    <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
+    <div id="skills" className="relative z-50 scroll-mt-24 border-t my-12 lg:my-24 border-[#25213b]">
       <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
 
       <div className="flex justify-center -translate-y-[1px]">
@@ -70,6 +70,29 @@ function Skills() {
           ))}
         </Marquee>
       </div>
+
+      {categories.length > 0 && (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {categories.map((c) => (
+            <div
+              key={c.category}
+              className="group rounded-xl border border-[#1f223c] bg-[#11152c] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-500"
+            >
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#16f2b3]">{c.category}</h3>
+              <ul className="flex flex-wrap gap-2">
+                {c.items.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-md border border-[#2b3158] bg-[#0d1224] px-2.5 py-1 text-xs text-gray-200 transition-colors group-hover:border-violet-500/40"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

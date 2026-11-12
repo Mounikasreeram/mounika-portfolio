@@ -8,9 +8,31 @@ import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
 
+const SITE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://mounika-sreeram.vercel.app";
+
 export const metadata = {
-  title: "Mounika Portfolio",
-  description: "Senior Frontend Engineer Portfolio",
+  metadataBase: new URL(SITE_URL),
+  title: "Mounika Sreeram | Senior Frontend Engineer (React, TypeScript, Next.js) · Leeds, UK",
+  description:
+    "Senior Frontend Engineer with 7+ years building enterprise React/TypeScript apps for Citi and Intuit. Led a team of 6 on a 5,000+ user platform and architected a design system used by 20+ teams. UK right to work, no sponsorship required, available immediately.",
+  keywords: [
+    "Senior Frontend Engineer", "React developer", "TypeScript", "Next.js", "Redux Toolkit", "Design systems",
+    "StencilJS", "Frontend lead", "Leeds", "United Kingdom", "Mounika Sreeram",
+  ],
+  authors: [{ name: "Mounika Sreeram" }],
+  openGraph: {
+    type: "profile",
+    title: "Mounika Sreeram | Senior Frontend Engineer",
+    description: "7+ years in React, TypeScript & Next.js · Design systems · Team leadership · UK right to work · Available immediately.",
+    url: SITE_URL,
+    images: [{ url: "/profile.png", width: 280, height: 280, alt: "Mounika Sreeram" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Mounika Sreeram | Senior Frontend Engineer",
+    description: "7+ years in React, TypeScript & Next.js · Available immediately in the UK.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }) {

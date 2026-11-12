@@ -9,7 +9,8 @@ import { RiContactsFill } from "react-icons/ri";
 import { SiLeetcode } from "react-icons/si";
 import { BiLogoGmail } from "react-icons/bi";
 
-function HeroSection() {
+function HeroSection({ highlights = [], authorization = "", location = "" }) {
+  const badges = (authorization || "").split(/\s*·\s*/).filter(Boolean);
   const socialLinks = [
     {
       href: `https://mail.google.com/mail/?view=cm&fs=1&to=${personalData.gmail}`,
@@ -67,14 +68,39 @@ function HeroSection() {
 
       <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
-          <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
+          <div className="fade-up mb-6 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#16f2b3]/40 bg-[#16f2b3]/10 px-3 py-1 text-xs font-medium text-[#16f2b3]">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#16f2b3] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#16f2b3]" />
+              </span>
+              Open to new roles
+            </span>
+            {location && (
+              <span className="rounded-full border border-[#2b3158] bg-[#11152c] px-3 py-1 text-xs text-gray-300">
+                📍 {location}
+              </span>
+            )}
+          </div>
+
+          <h1 className="fade-up text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             Hello, <br />
             This is <span className=" text-pink-500">{personalData.name}</span>
             {` , I'm a Professional `}
             <span className=" text-[#16f2b3]">{personalData.designation}</span>.
           </h1>
 
-          <div className="my-12">
+          {badges.length > 0 && (
+            <ul className="fade-up mt-6 flex flex-wrap gap-2" aria-label="Work eligibility">
+              {badges.map((b) => (
+                <li key={b} className="flex items-center gap-1.5 rounded-lg border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-xs text-violet-200 sm:text-sm">
+                  <span className="text-[#16f2b3]">✓</span> {b}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <div className="my-10">
             <p className="mb-4 text-sm font-semibold tracking-[0.2em] text-white/70 uppercase">
               LET&apos;S CONNECT
             </p>
@@ -228,6 +254,25 @@ function HeroSection() {
           </div>
         </div>
       </div>
+
+      {highlights.length > 0 && (
+        <dl className="fade-up mt-10 grid w-full grid-cols-2 gap-3 sm:grid-cols-3 lg:mt-16 lg:grid-cols-5 lg:gap-4">
+          {highlights.map((h, i) => (
+            <div
+              key={h.label}
+              className={`group relative flex flex-col overflow-hidden rounded-xl border border-[#1b2c68a0] bg-gradient-to-br from-[#11152c] to-[#0a0d37] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/60 lg:p-5 ${
+                i === highlights.length - 1 && highlights.length % 2 ? "col-span-2 sm:col-span-1" : ""
+              }`}
+            >
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-pink-500 via-violet-600 to-[#16f2b3] opacity-60 transition-opacity group-hover:opacity-100" />
+              <dt className="order-2 mt-1 text-xs text-gray-400 sm:text-sm">{h.label}</dt>
+              <dd className="order-1 bg-gradient-to-r from-pink-400 to-violet-400 bg-clip-text text-2xl font-extrabold text-transparent lg:text-3xl">
+                {h.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
     </section>
   );
 }
